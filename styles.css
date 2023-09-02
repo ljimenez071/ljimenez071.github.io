@@ -1,0 +1,156 @@
+/* Estilos generales */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #ffffff; /* Cambiado a verde (#ccffcc) */
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #009900; /* Cambiado a verde oscuro (#009900) */
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+
+h1 {
+    font-size: 36px;
+}
+
+nav {
+    text-align: center;
+    padding: 10px;
+    background-color: #33cc33; /* Cambiado a verde claro (#33cc33) */
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav li {
+    display: inline;
+    margin-right: 20px;
+}
+
+section {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #f0f0f0;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    font-size: 24px;
+}
+
+p {
+    font-size: 16px;
+}
+
+/* Estilos del carrusel */
+.carousel {
+    display: flex;
+    overflow: hidden;
+}
+
+.video {
+    flex: 0 0 100%;
+    max-width: 100%;
+    transition: transform 0.5s ease-in-out;
+}
+
+.video video {
+    width: 100%;
+    height: auto;
+}
+
+/* Estilos responsivos */
+@media screen and (max-width: 768px) {
+    /* Estilos para pantallas más pequeñas */
+    h1 {
+        font-size: 24px;
+    }
+
+    nav {
+        padding: 5px;
+    }
+
+    nav li {
+        margin-right: 10px;
+    }
+
+    section {
+        padding: 10px;
+    }
+
+    h2 {
+        font-size: 20px;
+    }
+
+    p {
+        font-size: 14px;
+    }
+
+    /* Ajustar el tamaño del video en pantallas más pequeñas si es necesario */
+    .video video {
+        width: 100%;
+        height: auto;
+    }
+}
+
+
+
+/* Estilos para las imágenes */
+img {
+    max-width: 100%; /* Hacer que las imágenes se ajusten al 100% del contenedor */
+    height: auto; /* Mantener la proporción de aspecto original */
+}
+
+
+
+
+ /* Estilos para los productos */
+ .product {
+    display: inline-block;
+    margin: 10px;
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: center;
+    width: 200px;
+}
+
+.product img {
+    max-width: 100%;
+    height: auto;
+}
+
+.product h3 {
+    font-size: 1.2rem;
+    margin: 5px 0;
+}
+
+.product p {
+    font-size: 1rem;
+    margin: 5px 0;
+}
+
+.product a {
+    display: block;
+    text-decoration: none;
+    background-color: #007BFF;
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+
+.youtube-video {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px; /* Ajusta el margen superior según sea necesario */
+}

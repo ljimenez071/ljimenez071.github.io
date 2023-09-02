@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página de Inicio</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Proyecto 1: HTML5/CSS3/WEB SQL</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="#">Inicio</a></li>
+            <li><a href="#">Nosotros</a></li>
+            <li><a href="#">Productos</a></li>
+            <li><a href="#">Contacto</a></li>
+        </ul>
+    </nav>
+    <section>
+        <h2>Cactus del Mundo</h2>
+        <p>Bienvenidos a nuestra tienda de cactus. Descubre una selección única de cactus de alta calidad para decorar tu hogar u oficina. 
+          Desde cactus suculentos hasta especies raras, tenemos la planta perfecta para ti. Explora nuestra colección y lleva un pedacito del desierto a tu vida. ¡Compra ahora!</p>
+        <ul>
+            <li>1. LESTER ALEXANDRO JIMÉNEZ MATUL 0900-20-3316.</li>
+            <li>2. JOSÉ DANIEL GOMEZ LARIN         </li>
+        </ul>
+    </section>
+    
+    <section>
+      <h2>Nuestros Productos</h2>
+      <p>Aquí encontrarás una selección de nuestros productos, incluyendo videos promocionales:</p>
+      <div class="product">
+          <img src="imagenes/producto_4.jpg" alt="Producto 1">
+          <h3>Desierto Sereno</h3>
+          <p>Descripción del Producto 1.</p>
+          <p>Precio: Q150.00</p>
+          <form action="carrito.php" method="post">
+            <input type="hidden" name="product_id" value="1">
+            <input type="submit" value="Agregar al carrito">
+        </form>
+      </div>
+
+      <div class="product">
+          <img src="imagenes/producto_2.jpg" alt="Producto 2">
+          <h3>Rincón Cactífico</h3>
+          <p>Descripción del Producto 2.</p>
+          <p>Precio: Q225.00</p>
+          <form action="carrito.php" method="post">
+            <input type="hidden" name="product_id" value="2">
+            <input type="submit" value="Agregar al carrito">
+        </form>
+      </div>
+      <div class="product">
+        <img src="imagenes/producto_1.jpg" alt="Producto 1">
+        <h3>Oasis Esmeralda</h3>
+        <p>Descripción del Producto 1.</p>
+        <p>Precio: Q350.00</p>
+        <form action="carrito.php" method="post">
+          <input type="hidden" name="product_id" value="3">
+          <input type="submit" value="Agregar al carrito">
+      </form>
+    </div>
+      <!-- Puedes agregar más productos siguiendo la misma estructura -->
+      <div class="youtube-video">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/5eqRYHM5Iqc?si=ZKA1Tt5GqYCsz0wU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+    </div>
+
+    
+
+  </section>
+
+ <!-- País de compra usando geolocalización -->
+ <section>
+  <h2>País de Compra</h2>
+  <p>El país de compra es: <span id="country">Obteniendo...</span></p>
+</section>
+
+<!-- JavaScript para obtener el país mediante geolocalización -->
+<script>
+  if ("geolocation" in navigator) {
+      navigator.geolocation.getCurrentPosition(function(position) {
+          fetch(`https://geocode.xyz/${position.coords.latitude},${position.coords.longitude}?json=1`)
+              .then(response => response.json())
+              .then(data => {
+                  document.getElementById('country').textContent = data.country;
+              })
+              .catch(error => {
+                  console.error(error);
+              });
+      });
+  } else {
+      document.getElementById('country').textContent = "Geolocalización no compatible.";
+  }
+</script>
+
+
+</body>
+</html>
